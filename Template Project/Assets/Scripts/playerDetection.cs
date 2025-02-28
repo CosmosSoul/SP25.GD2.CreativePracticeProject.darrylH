@@ -5,11 +5,12 @@ using TMPro;
 
 public class playerDetection : MonoBehaviour
 {
-
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] songs = new AudioClip[5];
     public TextMeshProUGUI textboxText;
     bool isPlayerInRange = false;
-    
-    private string[] dialogue2 = {
+
+    private string[] dialogue4 = {
         "Samwise: What's good D.",
         "Dillon: Word to the wise! What it do bro. How you living?",
         "Samwise: We good. How you? How was that BSU event yesterday?",
@@ -63,12 +64,12 @@ public class playerDetection : MonoBehaviour
         {
             Debug.Log("Player has pressed F");
             currentDialogueIndex++;
-            if (currentDialogueIndex < dialogue2.Length)
+            if (currentDialogueIndex < dialogue4.Length)
             {
-                textboxText.text = dialogue2[currentDialogueIndex];
+                textboxText.text = dialogue4[currentDialogueIndex];
             }
       
-            else if (currentDialogueIndex == dialogue2.Length)
+            else if (currentDialogueIndex == dialogue4.Length)
             {
                 textboxText.text = "press F to eavesdrop!";
                 currentDialogueIndex = 0;
@@ -82,7 +83,7 @@ public class playerDetection : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.R) && currentDialogueIndex > 0)
          {
             currentDialogueIndex--;
-            textboxText.text = dialogue2[currentDialogueIndex];
+            textboxText.text = dialogue4[currentDialogueIndex];
         }
     }
          void OnTriggerEnter(Collider other)
@@ -99,4 +100,15 @@ public class playerDetection : MonoBehaviour
                 isPlayerInRange = false;
             }
         }
+
+         private void PlayRandomSong()
+         {
+        if (songs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, songs.Length);
+            audioSource.clip = songs[randomIndex];
+            audioSource.Play();
+        }
+    }
 }
+
