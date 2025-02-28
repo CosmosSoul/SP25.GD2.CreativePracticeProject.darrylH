@@ -54,7 +54,7 @@ public class playerDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        textboxText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -92,6 +92,7 @@ public class playerDetection : MonoBehaviour
             {
                 isPlayerInRange = true;
                 PlayRandomSong();
+                textboxText.gameObject.SetActive(true);
             }
         }
         void OnTriggerExit(Collider other)
@@ -100,6 +101,7 @@ public class playerDetection : MonoBehaviour
             {
                 isPlayerInRange = false;
                 audioSource.Stop();
+                textboxText.gameObject.SetActive(false);
             }
         }
 

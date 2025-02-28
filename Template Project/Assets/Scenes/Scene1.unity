@@ -588,7 +588,6 @@ GameObject:
   m_Component:
   - component: {fileID: 157548794}
   - component: {fileID: 157548795}
-  - component: {fileID: 157548796}
   m_Layer: 0
   m_Name: Convo1
   m_TagString: Untagged
@@ -632,26 +631,6 @@ MonoBehaviour:
   - Welcome to my shop.
   - How can I help you today?
   currentDialogueIndex: 0
---- !u!114 &157548796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157548793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f071a591713bcaf45996e3dac874a4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  songs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  textboxText: {fileID: 0}
 --- !u!1 &181507188
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +972,6 @@ GameObject:
   m_Component:
   - component: {fileID: 297631258}
   - component: {fileID: 297631257}
-  - component: {fileID: 297631256}
   m_Layer: 0
   m_Name: Convo5
   m_TagString: Untagged
@@ -1001,26 +979,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &297631256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297631255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f071a591713bcaf45996e3dac874a4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  songs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  textboxText: {fileID: 0}
 --- !u!114 &297631257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4457,9 +4415,9 @@ GameObject:
   - component: {fileID: 1666038192}
   - component: {fileID: 1666038197}
   - component: {fileID: 1666038196}
-  - component: {fileID: 1666038195}
   - component: {fileID: 1666038194}
   - component: {fileID: 1666038193}
+  - component: {fileID: 1666038198}
   m_Layer: 0
   m_Name: detectionSphere
   m_TagString: Untagged
@@ -4489,7 +4447,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666038191}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -4599,26 +4557,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3.76
   m_Center: {x: -3.8380108, y: 0, z: 2.0174007}
---- !u!114 &1666038195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666038191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f071a591713bcaf45996e3dac874a4ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1666038193}
-  songs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  textboxText: {fileID: 583314810}
 --- !u!23 &1666038196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4669,6 +4607,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666038191}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1666038198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666038191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1769b30ac5a8954ca07f0647934c080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1666038193}
+  songs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textboxText: {fileID: 583314810}
 --- !u!4 &1686721388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8123965163915932741, guid: 5736e576bae68ca4393c5441179cace9, type: 3}
