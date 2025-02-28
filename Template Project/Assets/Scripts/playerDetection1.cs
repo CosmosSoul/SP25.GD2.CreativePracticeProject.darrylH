@@ -5,6 +5,8 @@ using TMPro;
 
 public class playerDetection1 : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] songs = new AudioClip[5];
     public TextMeshProUGUI textboxText;
     bool isPlayerInRange = false;
     private int currentDialogueIndex = 0;
@@ -83,6 +85,7 @@ public class playerDetection1 : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 isPlayerInRange = true;
+                PlayRandomSong();
             }
         }
         void OnTriggerExit(Collider other)
@@ -90,6 +93,16 @@ public class playerDetection1 : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 isPlayerInRange = false;
+                audioSource.Stop();
             }
         }
+        private void PlayRandomSong()
+         {
+        if (songs.Length > 0)
+        {
+            int randomIndex = Random.Range(0, songs.Length);
+            audioSource.clip = songs[randomIndex];
+            audioSource.Play();
+        }
+    }
 }

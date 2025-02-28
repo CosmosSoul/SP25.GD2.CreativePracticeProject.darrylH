@@ -91,6 +91,7 @@ public class playerDetection : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 isPlayerInRange = true;
+                PlayRandomSong();
             }
         }
         void OnTriggerExit(Collider other)
@@ -98,6 +99,7 @@ public class playerDetection : MonoBehaviour
             if (other.gameObject.CompareTag("Player"))
             {
                 isPlayerInRange = false;
+                audioSource.Stop();
             }
         }
 
@@ -109,6 +111,8 @@ public class playerDetection : MonoBehaviour
             audioSource.clip = songs[randomIndex];
             audioSource.Play();
         }
+
+        //stop playing the song
     }
 }
 
